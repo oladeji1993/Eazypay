@@ -103,7 +103,7 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     if (this.loginForm.invalid) {
       return;
-    } else if (email == 'admin@yahoo.com' && password == 'Password') {
+    } else if (email == 'admin@yahoo.com' && password == 'Password@123') {
       this.router.navigate(['/dashboard']);
       this.toastr.success('Login Successful','Success')
     }else{

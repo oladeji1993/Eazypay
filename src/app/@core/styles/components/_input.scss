@@ -1,7 +1,7 @@
 @use "../abstracts/media-query" as *;
 
 .form-container {
-  width: 100%;
+  // width: 100%;
   margin-top: 2.5rem;
   position: relative;
 
@@ -52,4 +52,21 @@ select {
   outline: none;
   border: none;
   border: 1px solid #e1e1e1;
+}
+
+mat-error {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: start !important;
+  -ms-flex-align: start !important;
+  align-items: flex-start !important;
+  gap: 0.5rem !important;
+  font-size: 0.8rem !important;
+  padding-top: 0.5rem;
+
+  img {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
 }
