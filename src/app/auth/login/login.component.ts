@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { regexValidator } from 'src/app/@core/utils/helper';
 
 @Component({
@@ -15,10 +16,14 @@ export class LoginComponent implements OnInit {
   deviceInfo: any;
   public submitted = false;
 
-  constructor(public fb: FormBuilder, private router: Router) {}
+  constructor(
+    public fb: FormBuilder,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-      this.initializeForm()
+    this.initializeForm();
   }
 
   initializeForm() {
@@ -89,13 +94,20 @@ export class LoginComponent implements OnInit {
       this.loginFormControl['password'].hasError('minimum')
     ) {
       return 'Your password must have at least a minimum of 8 characters.';
-    }
-    else {
+    } else {
       return;
     }
   }
 
   login() {
-    this.router.navigate(['/dashboard'])
+    const { email, password } = this.loginForm.value;
+    if (this.loginForm.invalid) {
+      return;
+    } else if (email == 'admin@yahoo.com' && password == 'Password') {
+      this.router.navigate(['/dashboard']);
+      this.toastr.success('Success', 'Login Successful')
+    }else{
+      this.toastr.error('Error', 'Invalid email or password')
+    }
   }
 }
