@@ -1,0 +1,102 @@
+<div id="overview">
+  <div class="balance">
+    <div class="title">Available Balance</div>
+    <div class="amount">₦500,000.00</div>
+  </div>
+  <div class="border"></div>
+  <div class="filter">
+    <div class="transaction">Transactions</div>
+    <div class="filter-controller">
+      <div class="controller-content">
+        <div class="dropdown">
+          <select>
+            <option selected Disabled>Today</option>
+            <option value="New customer">Yesterday</option>
+            <option value="Existing customer">Last 7 days</option>
+            <option value="Existing customer">Last quarter</option>
+            <option value="Existing customer">Last 6 months</option>
+            <option value="Existing customer">Last year</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transaction-details">
+    <div class="transaction-count">
+      <div class="content">
+        <img src="assets/images/icons/transaction-details.svg" alt="" />
+        <div class="content-details">
+          <div class="title">Transaction Count</div>
+          <div class="value">1,250</div>
+        </div>
+      </div>
+      <div class="view-details view-account">
+        <span (click)="viewDetails('/dashboard/transaction')">
+          View Transaction details &nbsp; >
+        </span>
+      </div>
+    </div>
+    <div class="transaction-volume">
+      <div class="content">
+        <img src="assets/images/icons/transaction-volume.svg" alt="" />
+        <div class="content-details">
+          <div class="title">Transaction Volume</div>
+          <div class="value">₦2,560,540.34</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border"></div>
+
+  <div class="filter">
+    <div class="transaction">Transactions</div>
+    <div class="filter-controller">
+      <div class="controller-content">
+        <div class="dropdown">
+          <select>
+            <option selected Disabled>Today</option>
+            <option value="New customer">Yesterday</option>
+            <option value="Existing customer">Last 7 days</option>
+            <option value="Existing customer">Last quarter</option>
+            <option value="Existing customer">Last 6 months</option>
+            <option value="Existing customer">Last year</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="recent-account">
+      <div class="title">Recent Transactions</div>
+      <table>
+        <thead>
+          <tr>
+            <td>DATE</td>
+            <td>DESCRIPTION</td>
+            <td>AMOUNT</td>
+            <td>TYPE</td>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of transactionHistory">
+            <tr>
+              <td>{{ item.date }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.amount }}</td>
+              <td>{{ item.type }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+    <div class="account-chart">
+      <div class="title">Total OutFlow</div>
+      <div id="pie-container" class="chart-container chart">
+        <figure id="pie"></figure>
+      </div>
+    </div>
+  </div>
+</div>

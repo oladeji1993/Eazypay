@@ -1,0 +1,60 @@
+<div id="Savings">
+  <div class="contollers">
+    <div class="controller-content-1">
+      <div class="search-container">
+        <input type="text" placeholder="Search..." />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="controller-content-2">
+      <div class="export">
+        <button [matMenuTriggerFor]="menu">Export</button>
+      </div>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <div>.csv</div>
+        </button>
+        <button mat-menu-item>
+          <div>.xlsx</div>
+        </button>
+        <button mat-menu-item>
+          <div>.pdf</div>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto">
+    <table>
+      <thead>
+        <tr>
+          <td>SAVINGS ID</td>
+          <td>DESCRIPTION</td>
+          <td>Savings DATE</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Savings of savingsData">
+          <td class="user-id">{{ Savings.transactionId }}</td>
+          <td>{{ Savings.amount }}</td>
+          <td>{{ Savings.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <div>1-10 of 27</div>
+    <div class="row-nav">
+      <div>Rows per page: 10 &nbsp;</div>
+      <div class="page-nav">
+        <div><img src="assets/images/icons/left-control-btn.svg" alt="" /></div>
+        <div class="pages">1/10</div>
+        <div>
+          <img src="assets/images/icons/right-control-btn.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

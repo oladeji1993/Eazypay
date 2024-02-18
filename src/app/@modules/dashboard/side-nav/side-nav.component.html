@@ -1,0 +1,94 @@
+<div id="side-nav">
+  <!-- <img width="90" src="assets/logo/logo.png" alt="" /> -->
+
+  <div class="nav-contents">
+    <div class="nav-item">
+      <div class="search-container">
+        <input type="text" placeholder="Search..." />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="nav-item" routerLinkActive="is-active">
+      <img
+        *ngIf="!isActive('/overview')"
+        src="assets/images/icons/overview.svg"
+        alt=""
+      />
+      <img
+        *ngIf="isActive('/overview')"
+        src="assets/images/icons/overview-active.svg"
+        alt=""
+      />
+      <div
+        (click)="setRoutePath('Overview')"
+        class="nav-title"
+        [routerLink]="['/dashboard/overview']"
+      >
+        <a class="nav-title">Overview</a>
+      </div>
+    </div>
+
+    <div class="nav-item" [class.is-active]="isActive('/transaction')">
+      <img
+        *ngIf="!isActive('/transaction')"
+        src="assets/images/icons/transaction.svg"
+        alt=""
+      />
+      <img
+        *ngIf="isActive('/transaction')"
+        src="assets/images/icons/transaction-active.svg"
+        alt=""
+      />
+      <div
+        (click)="setRoutePath('Transactions')"
+        class="nav-title"
+        [routerLink]="['/dashboard/transaction']"
+      >
+        <a class="nav-title">Transactions</a>
+      </div>
+    </div>
+
+    <div class="nav-item" routerLinkActive="is-active">
+      <img
+        *ngIf="!isActive('/investment')"
+        src="assets/images/icons/account.svg"
+        alt=""
+      />
+      <img
+        *ngIf="isActive('/investment')"
+        src="assets/images/icons/account-active.svg"
+        alt=""
+      />
+      <div
+        (click)="setRoutePath('Investment')"
+        class="nav-title"
+        [routerLink]="['/dashboard/investment']"
+      >
+        <a class="nav-title">Investment</a>
+      </div>
+    </div>
+
+    <div class="nav-item" routerLinkActive="is-active">
+      <img
+        *ngIf="!isActive('/savings')"
+        src="assets/images/icons/settings.svg"
+        alt=""
+      />
+      <img
+        *ngIf="isActive('/savings')"
+        src="assets/images/icons/settings-active.svg"
+        alt=""
+      />
+      <div
+        (click)="setRoutePath('Savings')"
+        class="nav-title"
+        [routerLink]="['/dashboard/savings']"
+      >
+        <a class="nav-title">Savings</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="bottom-content">hello</div> -->
+</div>

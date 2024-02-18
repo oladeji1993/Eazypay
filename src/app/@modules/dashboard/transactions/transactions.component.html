@@ -1,0 +1,79 @@
+<div id="transaction">
+  <div class="contollers">
+    <div class="controller-content-1">
+      <div class="inner-filter-container">
+        <div class="dropdown">
+          <select>
+            <option selected Disabled>Transaction Type</option>
+            <option value="New customer">Inflow</option>
+            <option value="Existing customer">Outflow</option>
+          </select>
+        </div>
+      </div>
+      <div class="search-container">
+        <input type="text" placeholder="Search..." />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="controller-content-2">
+      <div class="export">
+        <button [matMenuTriggerFor]="menu">Export</button>
+      </div>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <div>.csv</div>
+        </button>
+        <button mat-menu-item>
+          <div>.xlsx</div>
+        </button>
+        <button mat-menu-item>
+          <div>.pdf</div>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div style="overflow-x: auto">
+    <table>
+      <thead>
+        <tr>
+          <td>TRANSACTION ID</td>
+          <td>DESCRIPTION</td>
+          <td>TRANSACTION TYPE</td>
+          <td>AMOUNT</td>
+          <td>TRANSACTION DATE</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactionData">
+          <td class="user-id">{{ transaction.transaction_id }}</td>
+          <td>{{ transaction.description }}</td>
+          <td
+            [ngClass]="
+              transaction.transaction_type == 'inflow' ? 'inflow' : 'outflow'
+            "
+          >
+            {{ transaction.transaction_type }}
+          </td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.transaction_date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <div>1-10 of 27</div>
+    <div class="row-nav">
+      <div>Rows per page: 10 &nbsp;</div>
+      <div class="page-nav">
+        <div><img src="assets/images/icons/left-control-btn.svg" alt="" /></div>
+        <div class="pages">1/10</div>
+        <div>
+          <img src="assets/images/icons/right-control-btn.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

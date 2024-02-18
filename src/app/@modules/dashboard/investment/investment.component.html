@@ -1,0 +1,41 @@
+<div id="investment">
+
+  <div style="overflow-x: auto">
+    <table>
+      <thead>
+        <tr>
+          <td>INVESTMENT ID</td>
+          <td>COMPANY</td>
+          <td>INVESTMENT ID</td>
+          <td>AMOUNT</td>
+          <td>DATE</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let investment of investmentData">
+          <td class="user-id">{{ investment.investmentId }}</td>
+          <td>{{ investment.company }}</td>
+          <td>
+            {{ investment.investmentId }}
+          </td>
+          <td>{{ investment.amount }}</td>
+          <td>{{ investment.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <div>1-10 of 27</div>
+    <div class="row-nav">
+      <div>Rows per page: 10 &nbsp;</div>
+      <div class="page-nav">
+        <div><img src="assets/images/icons/left-control-btn.svg" alt="" /></div>
+        <div class="pages">1/10</div>
+        <div>
+          <img src="assets/images/icons/right-control-btn.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

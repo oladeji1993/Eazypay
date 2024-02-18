@@ -1,0 +1,48 @@
+@use 'sass:map';
+
+$min-width-breakpoints: (
+  ezPay-sm: 576px,
+  ezPay-md: 768px,
+  ezPay-lg: 992px,
+  ezPay-xl: 1200px,
+  ezPay-xxl: 1400px,
+);
+
+$max-width-breakpoints: (
+  ezPay-xsm: 575.98px,
+  ezPay-sm: 767.98px,
+  ezPay-md: 991.98px,
+  ezPay-lg: 1199.98px,
+  ezPay-xl: 1399.98px,
+);
+
+@mixin ezPay-media-query-min($key) {
+  $size: map.get($min-width-breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin ezPay-media-query-max($key) {
+  $size: map.get($max-width-breakpoints, $key);
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin ezPay-media-query-between($key1, $key2) {
+  $max: map.get($max-width-breakpoints, $key1);
+  $min: map.get($min-width-breakpoints, $key2);
+
+  @media only screen and (max-width: $max) and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin ezPay-media-query-between-normal($key1, $key2) {
+  @media only screen and (max-width: $key1) and (min-width: $key2) {
+    @content;
+  }
+}

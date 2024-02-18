@@ -1,0 +1,86 @@
+<!-- <app-header></app-header> -->
+<div id="login">
+  <div class="login-content">
+    <div class="main-container">
+      <h2>Sign in to your Eazy Pay account</h2>
+      <p class="fw-400">
+        Don’t have an account
+        <span routerLink="/auth/register" class="signup-link">Sign up</span>
+      </p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-container">
+        <div class="input-container">
+          <label class="label" for="email"> Email </label>
+          <input
+            matInput
+            formControlName="email"
+            class="custom-input form-control"
+            type="email"
+          />
+
+          <mat-error
+            *ngIf="
+              (loginFormControl['email'].touched || submitted) &&
+              loginFormControl['email'].invalid
+            "
+          >
+            <img
+              src="/assets/icons/error.svg"
+              alt=""
+              class="img-fluid error-icon"
+            />
+            {{ getErrorMessage("email") }}
+          </mat-error>
+        </div>
+
+        <div class="password-input">
+          <div class="input-container">
+            <label class="label" for="email"> Password </label>
+            <input
+              formControlName="password"
+              [type]="hide ? 'text' : 'password'"
+              class="custom-input"
+              type="password"
+            />
+            <mat-error
+              *ngIf="
+                (loginFormControl['password'].touched || submitted) &&
+                loginFormControl['password'].invalid
+              "
+            >
+              <img
+                src="/assets/icons/error.svg"
+                alt=""
+                class="img-fluid error-icon"
+              />
+              {{ getErrorMessage("password") }}
+            </mat-error>
+          </div>
+          <div class="show_password">
+            <mat-icon matSuffix (click)="hide = !hide">{{
+              hide ? "visibility" : "visibility_off"
+            }}</mat-icon>
+          </div>
+        </div>
+      </div>
+      <div class="forgot_password">
+        <span routerLink="/auth/forgot-password">Forgot Password?</span>
+      </div>
+      <button
+        type="submit"
+        class="btn ezPay-btn-md ezPay-btn-primary ezPay-btn-full"
+      >
+        <span *ngIf="!loader">Sign In</span>
+        <span class="flex justify-center">
+          <mat-spinner
+            *ngIf="loader"
+            diameter="21"
+            class="mat-spinner-color"
+          ></mat-spinner>
+        </span>
+      </button>
+    </form>
+  </div>
+</div>

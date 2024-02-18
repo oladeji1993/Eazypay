@@ -1,0 +1,38 @@
+<ng-container *ngIf="!isSmallerScreen">
+  <mat-drawer-container fxLayout="column" style="height: 100vh">
+    <mat-drawer-content>
+      <div
+        [ngClass]="{
+          'full-width-header': isSmallScreen,
+          'fixed-width-header': !isSmallScreen
+        }"
+        class="nav-container"
+      >
+        <app-header></app-header>
+        <mat-icon
+          (click)="toggleDrawer()"
+          #toggler
+          *ngIf="
+            breakpointObserver.isMatched([
+              breakpoints.Small,
+              breakpoints.Handset
+            ])
+          "
+          >menu</mat-icon
+        >
+      </div>
+      <div id="container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+    <mat-drawer
+      #drawer
+      class="mat-sidenav"
+      [opened]="
+        !breakpointObserver.isMatched([breakpoints.Small, breakpoints.Handset])
+      "
+    >
+      <app-side-nav></app-side-nav>
+    </mat-drawer>
+  </mat-drawer-container>
+</ng-container>

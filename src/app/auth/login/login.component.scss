@@ -1,0 +1,56 @@
+@import "/src/app/@core/styles/abstracts/media-query";
+
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .password-input {
+    position: relative;
+  }
+
+  .main-container {
+    width: 25.8rem;
+    margin-top: 2.5rem;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0rem;
+      font-family: "Axiforma";
+    }
+
+    p {
+      font-size: 1rem;
+      padding-top: 0.5rem;
+      font-weight: 400;
+    }
+
+    .signup-link {
+      color: #0a2472;
+      cursor: pointer;
+      font-weight: 400;
+    }
+
+    @include ezPay-media-query-max(ezPay-md) {
+      max-width: 20rem;
+    }
+  }
+
+  .forgot_password {
+    color: #0a2472;
+    font-weight: 700;
+    padding-top: 0.9rem;
+    padding-bottom: 3rem;
+    cursor: pointer;
+  }
+
+  @include ezPay-media-query-max(ezPay-md) {
+    padding: 0rem 3rem;
+  }
+}
+
+.mat-spinner-color::ng-deep circle {
+  stroke: #ffffff !important;
+}

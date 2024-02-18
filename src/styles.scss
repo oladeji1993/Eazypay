@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+// @use "./app/@core/styles/abstracts/" as *;
+// @use "./app/@core/styles/components/" as *;
+@import "ngx-toastr/toastr";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+// @import './app/@core/styles/abstracts/media-query.scss';
+@import "./app/@core/styles/components/button.scss";
+@import "./app/@core/styles/components/input.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Axiforma";
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url("../src/assets/fonts/AxiformaBold.otf") format("OpenType");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Axiforma";
+  src: url("../src/assets/fonts/AxiformaRegular.otf") format("OpenType");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Axiforma";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Greycliff CF", sans-serif;
+  cursor: auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 9.5px;
+  height: 9.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0a2472;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  background-clip: content-box;
+}

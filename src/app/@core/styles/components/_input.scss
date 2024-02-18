@@ -1,0 +1,55 @@
+@use "../abstracts/media-query" as *;
+
+.form-container {
+  width: 100%;
+  margin-top: 2.5rem;
+  position: relative;
+
+  .input-container {
+    margin-top: 1rem;
+
+    select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      border: 1px solid #e1e1e1;
+    }
+  }
+
+  .show_password {
+    text-align: right;
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+  }
+
+  .label {
+    display: block;
+    padding-bottom: 0.5rem;
+  }
+
+  .custom-input {
+    appearance: none;
+    border-width: 1px;
+    border: 1px solid #e1e1e1;
+    padding-top: 0.7rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    line-height: 1.25rem;
+    width: 93%;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+    padding-bottom: 0.7rem;
+  }
+}
+
+select {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  border: 1px solid #e1e1e1;
+}

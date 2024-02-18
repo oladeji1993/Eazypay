@@ -1,0 +1,190 @@
+@import "/src/app/@core/styles/abstracts/media-query";
+
+#investment {
+  padding: 1.5rem;
+
+  .contollers {
+    display: flex;
+    justify-content: space-between;
+
+    .controller-content-1 {
+      display: flex;
+
+      ::placeholder {
+        color: rgba(154, 155, 164, 1);
+      }
+
+      .dropdown {
+        margin-right: 12px;
+      }
+
+      .search-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      input {
+        width: 200px;
+        height: 40px;
+        padding-left: 30px;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #e1e1e1;
+      }
+
+      i.fa-search {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        cursor: pointer;
+      }
+
+      .inner-filter-container {
+        display: flex;
+
+        img {
+          border: 2px solid rgb(197, 198, 202);
+          padding: 7px;
+          box-shadow: 0px 2px 5px 0px rgba(89, 96, 120, 0.1);
+          border-radius: 6px;
+          // width: 5%;
+          // height: auto;
+          margin-right: 12px;
+        }
+        @include ezPay-media-query-max(ezPay-sm) {
+          margin-bottom: 0.8rem;
+        }
+      }
+
+      @include ezPay-media-query-max(ezPay-sm) {
+        display: block;
+
+        .controller-content-2 {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    .controller-content-2 {
+      display: flex;
+
+      .export {
+        button {
+          cursor: pointer;
+        }
+      }
+      .calendar {
+        margin-left: 0.625rem;
+
+        .calendar-content {
+          padding: 0.6838rem;
+          display: flex;
+          border: 1px solid #c2cfe0;
+          border-radius: 5px;
+
+          .start-date {
+            margin-right: 0.438rem;
+            font-size: 11px;
+          }
+
+          img {
+            margin-top: -3px;
+            margin-right: 4px;
+          }
+
+          .end-date {
+            margin-left: 0.438rem;
+            font-size: 11px;
+          }
+        }
+      }
+
+      button {
+        width: 93px;
+        height: 40px;
+        color: #fff;
+        border: none;
+        background-color: rgba(10, 36, 114, 1);
+        border-radius: 7px;
+        margin-left: 10px;
+      }
+    }
+
+    @include ezPay-media-query-max(ezPay-md) {
+      display: block;
+
+      .controller-content-2 {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  table {
+    border-collapse: separate;
+    width: 100%;
+    border-spacing: 0 3px;
+    margin-top: 2rem;
+
+    thead td {
+      font-weight: 600;
+    }
+
+    .inflow {
+      color: rgba(0, 200, 83, 1);
+    }
+
+    .outflow {
+      color: rgba(234, 30, 67, 1);
+    }
+
+    .user-id {
+      cursor: pointer;
+    }
+  }
+
+  td {
+    border: solid 1px rgba(217, 217, 217, 1);
+    border-style: solid none;
+    padding: 15px;
+    // background-color: cyan;
+  }
+  td:first-child {
+    border-left-style: solid;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  td:last-child {
+    border-right-style: solid;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .footer {
+    // width: 100%;
+    margin-top: 1rem;
+    background: rgba(249, 250, 252, 1);
+    display: flex;
+    text-align: center;
+    padding: 6px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+
+    .row-nav {
+      display: flex;
+      align-items: center;
+      color: rgba(104, 113, 130, 1);
+
+      .page-nav {
+        align-items: center;
+        display: flex;
+
+        .pages {
+          margin: 0px 5px;
+        }
+      }
+    }
+  }
+}
